@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cool Web Page</title>
+    <style>
+        .button-link {
+            display: inline-block;
+            padding: 10px 20px; /* Adjust padding to your liking */
+            background-color: #007bff; /* Button background color */
+            color: #fff; /* Button text color */
+            text-decoration: none; /* Remove underline from the link */
+            border: none;
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer;
+        }
+
+        .button-link:hover {
+            background-color: #0056b3; /* Change color on hover */
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>My project</h1>
+        <p>Where Cool Things Happen</p>
+    </div>
+
+    <div class="container">
+        <h2>first project</h2>
+        <a class="button-link" href ="{% url 'chatbot' %}">chat bot link<a>
+        </div>
+
+    <div class="container">
+        <h2>testing users</h2>
+        <a class="button-link" href ="{% url 'login' %}">login<a>
+        </div>
+    <div class="container">
+        <h2>gamepy</h2>
+        <a class="button-link" href ="{% url 'play_space' %}">space invador<a>
+    </div>
+
+      
+</body>
+</html>

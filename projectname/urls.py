@@ -16,12 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.http import HttpResponse
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('myapp.urls')),
     path('chatbot/',include('myapp.urls')),
-    path('snake/',include('myapp.urls'))
-
+    path('snake/',include('myapp.urls')),
+    path('playgame/',include('myapp.urls')),
+    path('play_space/',include('myapp.urls')),
+    #path('login/',include('myapp.urls')),
+    #path('sign_up/',include('myapp.urls')),
+    #path('logout/',include('myapp.urls')),
+    path('fortunecookie/',include('myapp.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
     
 ]

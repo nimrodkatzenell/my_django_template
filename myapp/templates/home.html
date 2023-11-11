@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+    <title>Cool Web Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
+   
+</head>
+
+
+<body>
+
+    <div class="header">
+        <h1>My project</h1>
+        <p>Where Cool Things Happen</p>
+    </div>
+    <div id="header">
+        {% if user.is_authenticated %}
+        <div id="user">
+           <h4> Hello you are logged in as: {{ user }} <a href="{% url 'logout' %}">Logout</a> </h4>
+
+        </div>
+        {% endif %}
+
+    <div class="container">
+        <h2>first project</h2>
+        <a class="button-link" href ="{% url 'chatbot' %}">chat bot link<a>
+        </div>
+
+    <div class="container">
+        <h2>testing users</h2>
+        <a class="button-link" href ="{% url 'login' %}">login<a>
+        <a class="button-link" href ="{% url 'signup' %}">sign Up<a>
+        </div>
+    <div class="container">
+        <h2>gamepy</h2>
+        <a class="button-link" href ="{% url 'play_space' %}">space invador<a>
+    </div>
+    <div class="container">
+        <h2>fortune cookie api</h2>
+        <a class="button-link" href ="{% url 'fortunecookie' %}">your fortune<a>
+    </div>
+
+      
+</body>
+</html>

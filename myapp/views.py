@@ -19,50 +19,27 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
+from .forms import InputForm
+from .forms import testForm
 
-"""""
-def register(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('login')  # Redirect to the login page after successful registration
-    else:
-        form = UserCreationForm()
-    return render(request, 'home.html', {'form': form})
 
-def signup(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)  # Automatically log in the user after registration
-            return redirect('home.html')  # Redirect to a success page or the home page
-    else:
-        form = UserCreationForm()
-    return render(request, 'home.html', {'form': form})
+
+
+def user_view(request):
+    context ={}
+    context['form']= InputForm()
+    return render(request, "user_login.html", context)
+
+def test_form_view(request):
+    context = {'form':testForm()}
+    return render(request,'test_form.html',context)
 
 
 
 
 
-class SignUpView(View):
-    template_name = 'registration/signup.html'
-    form_class = UserCreationForm
 
-    def get(self, request, *args, **kwargs):
-        form = self.form_class()
-        return render(request, self.template_name, {'form': form})
-
-    def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)  # Log the user in after registration
-            return redirect('home')  # Redirect to the home page or any desired URL
-
-        return render(request, self.template_name, {'form': form})
-"""
 
 # Create your views here.
 def my_view(request):
@@ -78,7 +55,7 @@ class SignUpView(generic.CreateView):
     success_url = reverse_lazy("login")
     template_name = "registration/signup.html"
 
-#@login_required
+@login_required
 def view_fortunecookie(request):
 
     conn = http.client.HTTPSConnection("fortune-cookie2.p.rapidapi.com")
@@ -92,7 +69,7 @@ def view_fortunecookie(request):
 
     res = conn.getresponse()
     data = res.read()
-
+    
     return HttpResponse(data.decode("utf-8"))
 
 class CustomLoginView(LoginView):

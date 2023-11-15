@@ -1,11 +1,27 @@
 
-{% block title %}Sign Up{% endblock %}
+{% load crispy_forms_tags %}
 
 {% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign Up</button>
-  </form>
+
+<!DOCTYPE html>
+
+{% load static %}
+<html>   
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
+</head>
+<body class ="sign">
+  
+  <div class = "container">
+    <h1>Sign up</h1>
+    <form method="post">
+      {% csrf_token %}
+      {% crispy form %}
+      <br>
+      <button type="submit" class = "button-link">Sign Up</button>
+    </form>
+  </div>
+</body>
+  </html>  
+
 {% endblock %}

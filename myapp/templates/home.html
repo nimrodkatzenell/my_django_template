@@ -26,21 +26,29 @@
         {% endif %}
 
     <div class="container">
-        <h2>first project</h2>
+        <h2>chat bot template</h2>
         <a class="button-link" href ="{% url 'chatbot' %}">chat bot link<a>
         </div>
 
     <div class="container">
         <h2>testing users</h2>
+        <h4>default method</h4>
         <a class="button-link" href ="{% url 'login' %}">login<a>
         <a class="button-link" href ="{% url 'signup' %}">sign Up<a>
+        <h4>manual method</h4>
+        <a class="button-link" href ="{% url 'user_login' %}">sign up<a>
+        <a class="button-link" href ="{% url 'test_form' %}">crispy <a>
+
+        
+
         </div>
     <div class="container">
         <h2>gamepy</h2>
         <a class="button-link" href ="{% url 'play_space' %}">space invador<a>
     </div>
     <div class="container">
-        <h2>fortune cookie api</h2>
+        <h2>fortune cookie api </h2>        
+        <h4>(need to log in to open)</h4>
         <a class="button-link" href ="{% url 'fortunecookie' %}">your fortune<a>
     </div>
 

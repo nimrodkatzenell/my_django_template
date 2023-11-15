@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path,include
 from django.http import HttpResponse
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('myapp.urls')),
@@ -30,5 +31,8 @@ urlpatterns = [
     #path('logout/',include('myapp.urls')),
     path('fortunecookie/',include('myapp.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('user_login/',include('myapp.urls')),
+    path('test_form/',include('myapp.urls')),
+
     
 ]
